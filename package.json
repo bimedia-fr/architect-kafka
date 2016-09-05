@@ -1,0 +1,25 @@
+{
+  "name": "architect-kafka",
+  "version": "0.0.1",
+  "description": "Expose Kafka consumers and producers as architect plugin",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "nodeunit test/test-*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bimedia-fr/architect-kafka.git"
+  },
+  "author": "Sébastien Boucontet",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/bimedia-fr/architect-kafka/issues"
+  },
+  "homepage": "https://github.com/bimedia-fr/architect-kafka#readme",
+  "dependencies": {
+    "kafka-node": "^0.5.6"
+  },
+  "devDependencies": {
+    "nodeunit": "^0.9.1"
+  }
+}
