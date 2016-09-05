@@ -1,7 +1,7 @@
 {
   "name": "architect-kafka",
   "version": "0.0.2",
-  "description": "Expose Kafka consumers and producers as architect plugin",
+  "description": "Expose kafka-node as architect plugin",
   "main": "lib/index.js",
   "scripts": {
     "test": "nodeunit test/test-*.js"

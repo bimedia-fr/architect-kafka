@@ -8,13 +8,6 @@ Expose [kafka-node](https://github.com/SOHU-Co/kafka-node) as architect plugin
 npm install --save architect-kafka
 ```
 
-### Config Format 
-
-```js
-{
-}
-```
-
 ### Usage
 
 Boot [Architect](https://github.com/c9/architect) :
@@ -101,4 +94,37 @@ module.exports = [
 		}
 	}
 ];
+```
+
+Use it :
+
+See [kafka-node documentation](https://github.com/SOHU-Co/kafka-node#consumer) for Consumer usage  
+See [kafka-node documentation](https://github.com/SOHU-Co/kafka-node#producer) for Producer usage  
+
+```js
+module.exports = function setup(options, imports, register) {
+
+    var kafka = imports.kafka;
+
+	var producer1 = kafka.producers.producer1;
+	var consumer2 = kafka.consumers.consumer2;
+
+	producer1.send([
+		{
+			topic: 'topicName1',
+			message: ['hello world !']
+		}
+	], function(err, res) {
+		...	
+	});
+
+	consumer2.on('message', function(message) {
+		...
+	});
+   
+    register();
+};
+
+module.exports.consumes = ['kafka'];
+module.exports.provides = [];
 ```
