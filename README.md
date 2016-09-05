@@ -49,6 +49,7 @@ module.exports = [
 			connectionString: 'localhost:2181', // Default localhost:2181
 		},
 		consumers: {
+			// Create a HighLevelConsumer using custom client, consuming from topics topicName1 and topicName2
 			consumer1: {
 				// Use HighLevelConsumer instead of Consumer, default false
 				highLevel: true, 
@@ -72,6 +73,7 @@ module.exports = [
 			        groupId: 'kafka-node-group'
 			    }
 		    },
+			// Create Consumer using default client
 		    consumer2: {
 		        payloads: [
 		            {
@@ -83,6 +85,7 @@ module.exports = [
 		    }
 		},
 		producers: {
+			// Create a HighLevelProducer using custom client
 		    producer1: {
 		        highLevel: true, // Use HighLevelproducer instead of Producer, default false
 				// See kafka-node documentation for Client options
@@ -93,6 +96,7 @@ module.exports = [
 				// See kafka-node documentation for Producer options
 		        options: {}
 		    },
+			// Create a regular Kafka Producer using default client
 		    producer2: {}
 		}
 	}

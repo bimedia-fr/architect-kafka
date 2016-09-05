@@ -1,6 +1,6 @@
 {
   "name": "architect-kafka",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Expose Kafka consumers and producers as architect plugin",
   "main": "lib/index.js",
   "scripts": {
