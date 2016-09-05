@@ -36,9 +36,9 @@ architect.createApp(config, function (err, app) {
 
 Configure Architect with `config.js` :
 
-See [kafka-node documentation](https://github.com/SOHU-Co/kafka-node#client) for Client options
-See [kafka-node documentation](https://github.com/SOHU-Co/kafka-node#consumer) for Consumer options
-See [kafka-node documentation](https://github.com/SOHU-Co/kafka-node#producer) for Producer options
+See [kafka-node documentation](https://github.com/SOHU-Co/kafka-node#client) for Client options  
+See [kafka-node documentation](https://github.com/SOHU-Co/kafka-node#consumer) for Consumer options  
+See [kafka-node documentation](https://github.com/SOHU-Co/kafka-node#producer) for Producer options  
 
 ```js
 module.exports = [
