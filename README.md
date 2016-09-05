@@ -33,3 +33,64 @@ architect.createApp(config, function (err, app) {
     console.log("app ready");
 });
 ```
+
+Configure Architect with `config.js` :
+
+```js
+module.exports = [
+{
+	packagePath: 'architect-kafka',
+	client: { // Optional, default client
+		// See kafka-node documentation for Client options
+		connectionString: 'localhost:2181', // Default localhost:2181
+	},
+	consumers: {
+		consumer1: {
+			// Use HighLevelConsumer instead of Consumer, default false
+		        highLevel: true, 
+			// See [kafka-node documentation](https://github.com/SOHU-Co/kafka-node#client) for Client options
+		        client: {
+		            connectionString: 'localhost:2181',
+		            clientId: 'architect-kafka-client'
+		        },
+			// See kafka-node documentation for Consumer options
+		        payloads: [
+		            {
+		                topic: 'topicName1',
+		                offset: 0
+		            },
+		            {
+		                topic: 'topicName2',
+		                offset: 10
+		            }
+		        ],
+		        options: {
+		            groupId: 'kafka-node-group'
+		        }
+            },
+            consumer2: {
+                payloads: [
+                    {
+                        topic: 'topicName1',
+                        offset: 0
+                    }
+                ],
+                options: {}
+            }
+        },
+        producers: {
+            producer1: {
+                highLevel: true, // Use HighLevelproducer instead of Producer, default false
+                client: {
+                    connectionString: 'localhost:2181',
+                    clientId: 'architect-kafka-client'
+                },
+                options: {
+                    // See kafka-node documentation for Producer options
+                }
+            },
+            producer2: {}
+        }
+    }
+];
+```
