@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/bimedia-fr/architect-kafka#readme",
   "dependencies": {
+    "async": "^2.0.1",
     "kafka-node": "^0.5.6"
   },
   "devDependencies": {
