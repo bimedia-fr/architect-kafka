@@ -44,8 +44,8 @@ module.exports = [
 		consumers: {
 			// Create a HighLevelConsumer using custom client, consuming from topics topicName1 and topicName2
 			consumer1: {
-				// Use HighLevelConsumer instead of Consumer, default false
-				highLevel: true, 
+				// Consumer type  [HighLevel|ConsumerGroup], optional default to Consumer
+				type: HighLevel, 
 				// See kafka-node documentation for Client options
 			    client: {
 			        connectionString: 'localhost:2181',
