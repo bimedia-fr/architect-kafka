@@ -1,24 +1,22 @@
-/*jslint node : true, nomen: true, plusplus: true, vars: true, eqeq: true,*/
-
-"use strict";
-
+'use strict';
 
 module.exports = [
     {
         packagePath: 'architect-kafka',
-        client: { // Optional, default client
-            connectionString: 'localhost:2181', // Default localhost:2181
-            clientId: 'architect-kafka-client'
-            // See kafka-node documentation for Client options
-            // zkOptions: {},   
-            // noAckBatchOptions: {},
-            // sslOptions: {}
+        client: { // Optional, default client. See Kafka-Client for options https://www.npmjs.com/package/kafka-node/v/3.0.1#kafkaclient
+            kafkaHost : 'localhost:9092', // Default localhost:9092
+            connectTimeout : 10000, // default: 10000
+            requestTimeout : 30000, // default: 30000
+            autoConnect : true, // default: true
+            idleConnection : 300000, // default: 5 minutes
+            maxAsyncRequests : 10, // default: 10,
+            sslOptions: { rejectUnauthorized: false }
         },
         consumers: {
             consumer1: {
                 highLevel: true, // Use HighLevelConsumer instead of Consumer, default false
                 client: {
-                    connectionString: 'localhost:2181',
+                    connectionString: 'localhost:9092',
                     clientId: 'architect-kafka-client'
                 },
                 payloads: [
@@ -49,9 +47,8 @@ module.exports = [
         producers: {
             producer1: {
                 highLevel: true, // Use HighLevelproducer instead of Producer, default false
-                client: {
-                    connectionString: 'localhost:2181',
-                    clientId: 'architect-kafka-client'
+                client: { // See Kafka-Client for options https://www.npmjs.com/package/kafka-node/v/3.0.1#kafkaclient
+                    kafkaHost: 'localhost:9092'
                 },
                 options: {
                     // See kafka-node documentation for Producer options
