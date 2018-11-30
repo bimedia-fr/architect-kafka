@@ -1,6 +1,6 @@
 {
   "name": "architect-kafka",
-  "version": "1.2.0",
+  "version": "2.0.0-rc0",
   "description": "Expose kafka-node as architect plugin",
   "main": "lib/index.js",
   "scripts": {
@@ -10,17 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/bimedia-fr/architect-kafka.git"
   },
-  "author": "Sébastien Boucontet",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/bimedia-fr/architect-kafka/issues"
   },
   "homepage": "https://github.com/bimedia-fr/architect-kafka#readme",
   "dependencies": {
-    "async": "^2.0.1",
-    "kafka-node": "^1.0.7"
-  },
-  "devDependencies": {
-    "nodeunit": "^0.9.1"
+    "async": "^2.6.1",
+    "kafka-node": "^3.0.1"
   }
 }
