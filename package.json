@@ -1,6 +1,6 @@
 {
   "name": "architect-kafka",
-  "version": "2.0.0-rc0",
+  "version": "2.0.0",
   "description": "Expose kafka-node as architect plugin",
   "main": "lib/index.js",
   "scripts": {
