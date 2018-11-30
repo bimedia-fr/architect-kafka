@@ -16,8 +16,7 @@ module.exports = [
             consumer1: {
                 highLevel: true, // Use HighLevelConsumer instead of Consumer, default false
                 client: {
-                    connectionString: 'localhost:9092',
-                    clientId: 'architect-kafka-client'
+                    kafkaHost: 'localhost:9092'
                 },
                 payloads: [
                     {

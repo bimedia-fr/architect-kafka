@@ -29,7 +29,7 @@ architect.createApp(config, function (err, app) {
 
 Configure Architect with `config.js` :
 
-See [kafka-node documentation](https://github.com/SOHU-Co/kafka-node#client) for Client options  
+See [kafka-node documentation](https://github.com/SOHU-Co/kafka-node#kafkaClient) for Client options  
 See [kafka-node documentation](https://github.com/SOHU-Co/kafka-node#consumer) for Consumer options  
 See [kafka-node documentation](https://github.com/SOHU-Co/kafka-node#producer) for Producer options  
 
@@ -37,10 +37,15 @@ See [kafka-node documentation](https://github.com/SOHU-Co/kafka-node#producer) f
 module.exports = [
 	{
 		packagePath: 'architect-kafka',
-		client: { // Optional, default client
-			// See kafka-node documentation for Client options
-			connectionString: 'localhost:2181', // Default localhost:2181
-		},
+		client: { // Optional, default client. See Kafka-Client for options https://www.npmjs.com/package/kafka-node/v/3.0.1#kafkaclient
+                    kafkaHost : 'localhost:9092', // Default localhost:9092
+                    connectTimeout : 10000, // default: 10000
+                    requestTimeout : 30000, // default: 30000
+                    autoConnect : true, // default: true
+                    idleConnection : 300000, // default: 5 minutes
+                    maxAsyncRequests : 10, // default: 10,
+                    sslOptions: { rejectUnauthorized: false }
+                },
 		consumers: {
 			// Create a HighLevelConsumer using custom client, consuming from topics topicName1 and topicName2
 			consumer1: {
@@ -48,8 +53,7 @@ module.exports = [
 				type: HighLevel, 
 				// See kafka-node documentation for Client options
 			    client: {
-			        connectionString: 'localhost:2181',
-			        clientId: 'architect-kafka-client'
+			        kafkaHost: 'localhost:9092'
 			    },
 				// See kafka-node documentation for Consumer options
 			    payloads: [
@@ -81,10 +85,8 @@ module.exports = [
 			// Create a HighLevelProducer using custom client
 		    producer1: {
 		        highLevel: true, // Use HighLevelproducer instead of Producer, default false
-				// See kafka-node documentation for Client options
-		        client: {
-		            connectionString: 'localhost:2181',
-		            clientId: 'architect-kafka-client'
+		        client: { // See Kafka-Client for options https://www.npmjs.com/package/kafka-node/v/3.0.1#kafkaclient
+		            kafkaHost: 'localhost:9092'
 		        },
 				// See kafka-node documentation for Producer options
 		        options: {}
