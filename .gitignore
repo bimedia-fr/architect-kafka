@@ -1,3 +1,9 @@
-/node_modules/
-.DS_Store
-._.DS_Store
+nbproject
+node_modules
+xunit-report.xml
+.idea
+apidoc
+**/*.log
+*.xml
+.vscode/launch.json
+*.BACK
