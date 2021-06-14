@@ -16,8 +16,7 @@
   },
   "homepage": "https://github.com/bimedia-fr/architect-kafka#readme",
   "dependencies": {
-    "async": "^2.6.1",
-    "kafka-node": "^3.0.1"
+    "kafka-node": "^5.0.0"
   },
   "devDependencies": {
     "eslint": "4.15.0"
